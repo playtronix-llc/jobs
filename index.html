@@ -1,21 +1,13 @@
-<!DOCTYPE html>
+```html
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Playtronix Careers & Engineering Interview Handbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Playtronix careers page with current vacancies and engineering interview handbook.">
-
   <style>
     :root {
-      --bg: #f5f7fb;
-      --bg-alt: #ffffff;
-      --border: #e5e7eb;
-      --text: #111827;
-      --muted: #4b5563;
-      --accent: #2563eb;
-      --accent-soft: #eff6ff;
-      --radius: 8px;
+      color-scheme: light dark;
     }
 
     * {
@@ -25,12 +17,13 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      line-height: 1.6;
+      background: #f6f7fb;
+      color: #111827;
     }
 
     a {
-      color: var(--accent);
+      color: #2563eb;
       text-decoration: none;
     }
 
@@ -38,432 +31,257 @@
       text-decoration: underline;
     }
 
-    .page {
-      max-width: 960px;
+    .site-header {
+      border-bottom: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .site-header-inner {
+      max-width: 800px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 1.75rem 1.25rem;
     }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-    }
-
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .site-title {
-      font-size: 20px;
+    .site-header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.8rem;
       font-weight: 600;
     }
 
-    .site-subtitle {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    nav {
-      display: flex;
-      gap: 12px;
-      font-size: 14px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-    }
-
-    nav a:hover {
-      background: var(--accent-soft);
-      border-color: var(--accent);
-      text-decoration: none;
+    .site-header p {
+      margin: 0;
+      color: #4b5563;
+      font-size: 0.95rem;
     }
 
     main {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
     }
 
-    section {
-      background: var(--bg-alt);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      padding: 16px 16px 18px;
+    .top-nav {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
     }
 
-    .section-header {
-      margin-bottom: 12px;
+    .top-nav a {
+      color: #6b7280;
     }
 
-    .section-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 0 0 2px;
+    .top-nav span {
+      margin: 0 0.5rem;
     }
 
-    .section-subtitle {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
     }
 
-    /* Vacancies */
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.35rem;
+    }
 
-    .vacancies-list {
-      margin: 12px 0 0;
-      padding: 0;
+    p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .vacancy-list {
       list-style: none;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
+      padding: 0;
+      margin: 0.75rem 0 0;
     }
 
-    @media (min-width: 720px) {
-      .vacancies-list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .vacancy {
-      padding: 10px 10px 12px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
+    .vacancy-list li {
       background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 0.9rem 0.9rem;
+      margin-bottom: 0.55rem;
     }
 
-    .vacancy-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 2px;
+    .vacancy-list h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
     }
 
-    .vacancy-meta {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .vacancy-footer {
-      margin-top: 8px;
-      font-size: 13px;
-    }
-
-    .vacancy-footer a {
-      font-weight: 500;
-    }
-
-    /* Handbook layout */
-
-    .handbook-layout {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    @media (min-width: 880px) {
-      .handbook-layout {
-        flex-direction: row;
-        align-items: flex-start;
-      }
-    }
-
-    .handbook-toc {
-      flex: 0 0 220px;
-      font-size: 13px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: #f9fafb;
-      padding: 10px 10px 12px;
-    }
-
-    .handbook-toc-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin: 0 0 6px;
-    }
-
-    .handbook-toc p {
-      margin: 0 0 8px;
-      color: var(--muted);
-    }
-
-    .handbook-toc ul {
-      list-style: none;
+    .vacancy-list p {
       margin: 0;
-      padding: 0;
+      font-size: 0.9rem;
+      color: #4b5563;
     }
 
-    .handbook-toc li + li {
-      margin-top: 4px;
+    ul, ol {
+      padding-left: 1.25rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.75rem;
     }
 
-    .handbook-toc a {
-      display: block;
-      padding: 4px 6px;
-      border-radius: 4px;
-    }
-
-    .handbook-toc a:hover {
-      background: var(--accent-soft);
-      text-decoration: none;
-    }
-
-    .handbook-content {
-      flex: 1;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .handbook-content h1,
-    .handbook-content h2,
-    .handbook-content h3 {
-      margin-top: 16px;
-      margin-bottom: 6px;
-    }
-
-    .handbook-content h1 {
-      font-size: 20px;
-    }
-
-    .handbook-content h2 {
-      font-size: 16px;
-    }
-
-    .handbook-content h3 {
-      font-size: 14px;
-    }
-
-    .handbook-content p {
-      margin-top: 0;
-      margin-bottom: 8px;
-      color: var(--muted);
-    }
-
-    .handbook-content ul {
-      margin-top: 0;
-      margin-bottom: 8px;
-      padding-left: 20px;
-    }
-
-    .handbook-content li {
-      margin-bottom: 4px;
-    }
-
-    .stage-label {
-      display: inline-block;
-      font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      margin-bottom: 4px;
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+      color: #9ca3af;
+      margin-bottom: 0.15rem;
     }
 
     footer {
-      margin-top: 24px;
-      font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      padding: 1rem 1.25rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 0.75rem;
+      color: #9ca3af;
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="header-top">
-        <div>
-          <div class="site-title">Playtronix Careers</div>
-          <p class="site-subtitle">Current vacancies and our engineering interview process.</p>
-        </div>
-        <nav>
-          <a href="#vacancies">Vacancies</a>
-          <a href="#handbook">Engineering Handbook</a>
-        </nav>
-      </div>
-    </header>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>Playtronix Careers</h1>
+      <p>Current openings and our engineering interview handbook.</p>
+    </div>
+  </header>
 
-    <main>
-      <!-- Vacancies -->
-      <section id="vacancies">
-        <div class="section-header">
-          <h2 class="section-title">Current vacancies</h2>
-          <p class="section-subtitle">All roles are listed and managed on careers.playtronix.com.</p>
-        </div>
+  <main>
+    <nav class="top-nav">
+      <span class="section-label">On this page</span><br>
+      <a href="#vacancies">Current vacancies</a>
+      <span>·</span>
+      <a href="#engineering-handbook">Engineering interview handbook</a>
+    </nav>
 
-        <ul class="vacancies-list">
-          <li class="vacancy">
-            <div class="vacancy-title">Frontend Developer</div>
-            <div class="vacancy-meta">Belgrade · Hybrid · Engineering · Full-time</div>
-            <div class="vacancy-footer">
-              <a href="https://careers.playtronix.com" target="_blank" rel="noreferrer">
-                Apply via careers.playtronix.com →
-              </a>
-            </div>
-          </li>
+    <section id="vacancies">
+      <div class="section-label">Open roles</div>
+      <h2>Current Vacancies</h2>
+      <p>All applications are handled via our careers portal.</p>
+      <ul class="vacancy-list">
+        <li>
+          <h3>
+            <a href="https://careers.playtronix.com" target="_blank" rel="noopener noreferrer">
+              Frontend Developer
+            </a>
+          </h3>
+          <p>Build modern user interfaces and frontend systems for our products.</p>
+        </li>
+        <li>
+          <h3>
+            <a href="https://careers.playtronix.com" target="_blank" rel="noopener noreferrer">
+              Java Backend Developer
+            </a>
+          </h3>
+          <p>Design and implement distributed backend services and APIs.</p>
+        </li>
+        <li>
+          <h3>
+            <a href="https://careers.playtronix.com" target="_blank" rel="noopener noreferrer">
+              Automation QA Engineer
+            </a>
+          </h3>
+          <p>Own automated testing and quality for mission-critical workflows.</p>
+        </li>
+      </ul>
+    </section>
 
-          <li class="vacancy">
-            <div class="vacancy-title">Java Backend Developer</div>
-            <div class="vacancy-meta">Belgrade · Hybrid · Engineering · Full-time</div>
-            <div class="vacancy-footer">
-              <a href="https://careers.playtronix.com" target="_blank" rel="noreferrer">
-                Apply via careers.playtronix.com →
-              </a>
-            </div>
-          </li>
+    <section id="engineering-handbook">
+      <div class="section-label">Interview guide</div>
+      <h2>Engineering Interview Handbook</h2>
 
-          <li class="vacancy">
-            <div class="vacancy-title">Automation QA Engineer</div>
-            <div class="vacancy-meta">Belgrade · Hybrid · Engineering · Full-time</div>
-            <div class="vacancy-footer">
-              <a href="https://careers.playtronix.com" target="_blank" rel="noreferrer">
-                Apply via careers.playtronix.com →
-              </a>
-            </div>
-          </li>
-        </ul>
-      </section>
+      <p>
+        At Playtronix, we evaluate candidates on broad distributed engineering skills
+        and strong software engineering fundamentals; this guide applies to both frontend
+        and backend interviews. Our interview framework focuses on problem-solving and
+        learning agility, letting us see both depth and breadth. We want to understand not
+        only how you code, but how you think. The process is structured in 3 stages, with
+        interviews scheduled accordingly.
+      </p>
 
-      <!-- Engineering handbook -->
-      <section id="handbook">
-        <div class="section-header">
-          <h2 class="section-title">Engineering Interview Handbook</h2>
-          <p class="section-subtitle">How we evaluate frontend and backend engineers at Playtronix.</p>
-        </div>
+      <h3>Stage 1 · Live coding round · 60 minutes · Online</h3>
+      <p>
+        In this interview, you will solve coding problems live using LeetCode’s online coding
+        platform. You will share your screen with the interviewer throughout the session—no IDE
+        setup is required.
+      </p>
+      <p>
+        This round will primarily focus on data structures and algorithms, so be prepared to
+        solve problems involving arrays, strings, recursion, linked lists, trees, graphs,
+        dynamic programming, and other core concepts.
+      </p>
+      <p>
+        Please ensure you have an active LeetCode account before the interview, as all coding
+        will be done directly on LeetCode during the session.
+      </p>
+      <p>Each interview is capped at 60 minutes and is designed to evaluate:</p>
+      <ul>
+        <li>Problem-solving skills</li>
+        <li>Code quality and efficiency</li>
+        <li>Understanding of algorithms and data structures</li>
+        <li>Communication of thought process</li>
+      </ul>
 
-        <div class="handbook-layout">
-          <!-- TOC -->
-          <aside class="handbook-toc">
-            <h3 class="handbook-toc-title">Contents</h3>
-            <p>Our process has three stages: live coding, technical deep dive, and behavioural.</p>
-            <ul>
-              <li><a href="#hb-overview">Overview</a></li>
-              <li><a href="#hb-stage-1">Stage-1 · Live coding</a></li>
-              <li><a href="#hb-stage-2">Stage-2 · Tech round</a></li>
-              <li><a href="#hb-backend">Backend focus</a></li>
-              <li><a href="#hb-frontend">Frontend focus</a></li>
-              <li><a href="#hb-stage-3">Stage-3 · Behavioural</a></li>
-            </ul>
-          </aside>
+      <h3>Stage 2 · Tech round · 60 minutes · On-site interview</h3>
+      <p>
+        Note: This round is required to be conducted offline at our Belgrade office. Under
+        exceptional circumstances, it may be run online via Google Meet and
+        <a href="https://excalidraw.com" target="_blank" rel="noopener noreferrer">excalidraw.com</a>
+        for drawing system architecture.
+      </p>
+      <p>
+        This interview assesses your technical depth, breadth, and problem-solving through
+        designing a solution to a defined problem. Your interviewer will evaluate your thought
+        process, decision-making, and considerations such as performance and reliability. It
+        varies between frontend and backend as follows:
+      </p>
 
-          <!-- Content -->
-          <article class="handbook-content">
-            <section id="hb-overview">
-              <h1>Playtronix</h1>
-              <h2>Engineering Interview Handbook</h2>
-              <p>
-                At Playtronix, we evaluate candidates on broad distributed engineering skills and strong software
-                engineering fundamentals; this guide applies to both frontend and backend interviews.
-              </p>
-              <p>
-                Our interview framework focuses on problem-solving and learning agility, letting us see both depth and
-                breadth. We want to understand not only how you code, but how you think. The process is structured in
-                three stages, with interviews scheduled accordingly.
-              </p>
-            </section>
+      <h4>Backend</h4>
+      <p>
+        It is a typical system design round. You will design a solution on a whiteboard or paper,
+        starting with fundamentals and adding complexity. Asking clarifying questions early and
+        clearly communicating your thinking is essential. We are interested in your approach, how
+        you draw from past experience, and how you design with customers, scalability, and
+        reliability in mind. You can also expect questions in the language of your specialty and
+        some questions based on your previous experience.
+      </p>
 
-            <section id="hb-stage-1">
-              <div class="stage-label">Stage-1 · Live coding round · 60 minutes · Online</div>
-              <h3>Stage-1: Live coding round – 60 minutes | Online</h3>
-              <p>
-                In this interview, you’ll solve coding problems live using LeetCode’s online coding platform. You will
-                share your screen with the interviewer throughout the session—no IDE setup is required.
-              </p>
-              <p>
-                This round will primarily focus on data structures and algorithms, so be prepared to solve problems
-                involving arrays, strings, recursion, linked lists, trees, graphs, dynamic programming, and other core
-                concepts.
-              </p>
-              <p>
-                Please ensure you have an active LeetCode account before the interview, as all coding will be done
-                directly on LeetCode during the session.
-              </p>
-              <p>Each interview is capped at 60 minutes and is designed to evaluate:</p>
-              <ul>
-                <li>Problem-solving skills</li>
-                <li>Code quality and efficiency</li>
-                <li>Understanding of algorithms and data structures</li>
-                <li>Communication of thought process</li>
-              </ul>
-            </section>
+      <h4>Frontend</h4>
+      <p>
+        The session will include a live-coding segment. Tasks will be short and focused on
+        practical skills—e.g., code small utilities in JS/TS, solve a React component logic
+        challenge, build a tiny state machine, or optimize a performance bottleneck. We evaluate
+        code clarity, ability to reason about edge cases, and how well you translate theoretical
+        knowledge into practice.
+      </p>
+      <p>
+        Please be prepared for in-depth theory questions across JS/TS, React and its ecosystem,
+        system design and architecture, and frontend performance. We will focus on language
+        fundamentals and React internals. Expect scenario-based reasoning rather than rote
+        definitions.
+      </p>
 
-            <section id="hb-stage-2">
-              <div class="stage-label">Stage-2 · Tech round · 60 minutes · On-site</div>
-              <h3>Stage-2: Tech round – 60 minutes | On-site interview</h3>
-              <p>
-                Note: This round is required to be conducted offline at our Belgrade office. Under exceptional
-                circumstances, it may be run online via Google Meet &amp; excalidraw.com for drawing system architecture.
-              </p>
-              <p>
-                This interview assesses your technical depth, breadth, and problem-solving through designing a solution
-                to a defined problem. Your interviewer will evaluate your thought process, decision-making, and
-                considerations such as performance and reliability, it varies between frontend and backend as follows:
-              </p>
-            </section>
+      <h3>Stage 3 · Behavioural round · 60 minutes · Online</h3>
+      <p>
+        This interview includes a set of behavioural interview questions, aimed at assessing how
+        your thought process and actions are aligned with our core set of company values. In this
+        round, we are keen to understand how you collaborate with your teams, cross-functional
+        communication, previous projects, and to get a deeper sense of your ambitions to ensure
+        the role is in fact the right one for you.
+      </p>
+      <p>
+        Our questions will be scenario-based, so please come prepared with examples that
+        demonstrate your experience across one or more projects that you have been a part of or
+        have led.
+      </p>
+    </section>
+  </main>
 
-            <section id="hb-backend">
-              <h3>Backend</h3>
-              <p>
-                It's a typical system design round, you’ll design a solution on a whiteboard or paper, starting with
-                fundamentals and adding complexity. Asking clarifying questions early and clearly communicating your
-                thinking is essential.
-              </p>
-              <p>
-                We’re interested in your approach, how you draw from past experience, and how you design with customers,
-                scalability, and reliability in mind. You can also expect questions in the language of your speciality
-                and some questions based on your previous experience.
-              </p>
-            </section>
-
-            <section id="hb-frontend">
-              <h3>Frontend</h3>
-              <p>
-                The session will include a live-coding segment. Tasks will be short and focused on practical skills—
-                e.g., code small utilities in Js/Ts, solve a react component logic challenge, build a tiny state machine,
-                or optimize a perf bottleneck.
-              </p>
-              <p>
-                We evaluate code clarity, ability to reason about edge cases, and how well you translate theoretical
-                knowledge into practice. Please be prepared for in-depth theory questions across JS/TS, React and its
-                ecosystem, System Design &amp; Architecture, and Frontend Performance. We will focus on the language
-                fundamentals and React internals. Expect scenario-based reasoning rather than rote definitions.
-              </p>
-            </section>
-
-            <section id="hb-stage-3">
-              <div class="stage-label">Stage-3 · Behavioural round · 60 minutes · Online</div>
-              <h3>Stage-3: Behavioural round – 60 minutes | Online</h3>
-              <p>
-                This interview includes a set of behavioural interview questions, aimed at assessing how your thought
-                process and actions are aligned with our core set of company values. In this round, we are keen to
-                understand how you collaborate with your teams, cross functional communication, previous projects and
-                get a deeper sense of your ambitions to ensure the role is in fact the right one for you.
-              </p>
-              <p>
-                Our questions will be scenario-based, so please come prepared with examples that demonstrate your
-                experience across one or more projects that you have been a part of or have led.
-              </p>
-            </section>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © 2025 Playtronix. Engineering hiring · Belgrade.
-    </footer>
-  </div>
+  <footer>
+    Playtronix · Careers & Engineering Interview Handbook
+  </footer>
 </body>
 </html>
+```
